@@ -146,6 +146,6 @@ app.get('/uploads/:fileName', async (req, res) => {
   
 
 
-app.listen(PORT, '0.0.0.0', () => {
+app.listen(3000, '0.0.0.0', () => {
   console.log(`🚀 Server running at http://0.0.0.0:${PORT}`);
 });
