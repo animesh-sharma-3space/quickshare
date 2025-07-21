@@ -1,0 +1,266 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  background-color: white;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  padding: 20px 40px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  border-bottom: 2px solid orange;
+}
+
+.logo {
+  font-family: 'Pacifico', cursive;
+  font-size: 1.8rem;
+  color: orange;
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.logo:hover {
+  transform: scale(1.1);
+}
+
+.tagline {
+  font-size: 1rem;
+  color: #666;
+  font-style: italic;
+}
+
+.container {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px;
+}
+
+.heading {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.subtext {
+  font-size: 1rem;
+  margin-bottom: 30px;
+  color: #666;
+}
+
+.buttons {
+  display: flex;
+  gap: 20px;
+}
+
+.btn {
+  background-color: orange;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 6px 16px rgba(255, 165, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background-color: darkorange;
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(255, 140, 0, 0.3);
+}
+
+footer {
+  text-align: center;
+  padding: 15px;
+  font-size: 0.9rem;
+  color: #aaa;
+  background: #f9f9f9;
+  border-top: 1px solid #eee;
+}
+
+/* Modal Styling */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(3px);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal1 {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(3px);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 16px;
+  padding: 30px 40px;
+  width: 90%;
+  max-width: 500px;
+  text-align: center;
+  position: relative;
+  animation: fadeIn 0.4s ease-in-out;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Sender Email Input */
+#senderId {
+  width: 100%;
+  max-width: 360px;
+  height: 40px;
+  padding: 10px 15px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 10px;
+  margin: 0 auto 20px auto;
+  margin-top: 20px;
+  display: block;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+#senderId:focus {
+  outline: none;
+  box-shadow: 0 6px 20px rgba(255, 165, 0, 0.3);
+}
+
+/* Close Button */
+.close,
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 28px;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
+  z-index: 999;
+}
+
+.close:hover,
+.close-btn:hover {
+  color: red;
+}
+
+/* Browse File Button */
+.browse-btn {
+  background-color: orange;
+  color: white;
+  padding: 15px 25px;
+  border-radius: 10px;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1rem;
+  margin: 20px 0 10px;
+  transition: background 0.3s ease;
+}
+
+.browse-btn:hover {
+  background-color: darkorange;
+}
+
+/* File Name Text */
+.file-name {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* Upload Button */
+#uploadbutton.btn {
+  background-color: orange;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  font-size: 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#uploadbutton.btn:hover {
+  background-color: darkorange;
+  transform: scale(1.05);
+}
+
+#fetchpassword {
+  width: 200px;
+  height: 30px;
+  border-radius: 5px;
+  margin-bottom: 30px;
+  margin-top: 30px;
+  border: rgb(243, 238, 238);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+.fetch {
+  background: white;
+  border-radius: 16px;
+  padding: 30px 40px;
+  width: 90%;
+  max-width: 500px;
+  text-align: center;
+  position: relative;
+  animation: fadeIn 0.4s ease-in-out;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.result-text {
+  margin-top: 20px;
+  font-weight: bold;
+  color: green;
+}
+
+@media (max-width: 600px) {
+  .buttons {
+    flex-direction: column;
+  }
+}
