@@ -1,4 +1,10 @@
 {
+  "name": "quickshare",
+  "version": "1.0.0",
+  "main": "server3.js",
+  "scripts": {
+    "start": "node server3.js"
+  },
   "dependencies": {
     "bcrypt": "^6.0.0",
     "cloudinary": "^1.41.3",
