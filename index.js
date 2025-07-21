@@ -51,7 +51,7 @@ function uploadfiles(event){
     formData.append("file", file);
     formData.append("email", email); 
   
-    fetch('http://localhost:3000/upload', {
+    fetch('https://quickshare-3m6q.onrender.com/upload', {
       method: 'POST',
       body: formData
     })
@@ -88,7 +88,7 @@ function uploadfiles(event){
   });
 function getfiles(){
   const key=document.getElementById('fetchpassword').value;
-  fetch('http://localhost:3000/fetch', {
+  fetch('https://quickshare-3m6q.onrender.com/fetch', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ password:key})
@@ -112,7 +112,7 @@ function getfiles(){
     }
   })
   .then((data) => {
-    window.location.href = `http://localhost:3000/uploads/${data.filename}`;
+    window.location.href = `https://quickshare-3m6q.onrender.com/uploads/${data.filename}`;
   })
   
 }
