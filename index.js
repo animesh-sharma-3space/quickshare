@@ -165,6 +165,7 @@ function getfiles(){
     }
   })
   .then((data) => {
+    Swal.close();
     window.location.href = `https://quickshare-3m6q.onrender.com/uploads/${data.filename}`;
   })
   
