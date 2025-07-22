@@ -2,66 +2,131 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>QuickShare</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QuickShare - Welcome</title>
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body, html {
+      height: 100%;
+      font-family: 'Roboto', sans-serif;
+      background-color: #fff;
+    }
+
+    .container {
+      display: flex;
+      height: 100vh;
+    }
+
+    .left {
+      flex: 1;
+      background: linear-gradient(135deg, darkorange,darkorange);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+    }
+
+    .logo {
+      font-family: 'Pacifico', cursive;
+      font-size: 3.5rem;
+      color: white;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+      cursor: pointer;
+    }
+
+    .right {
+      flex: 2;
+      background-color: #fff;
+      padding: 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .right h1 {
+      font-size: 2.8rem;
+      color: #222;
+    }
+
+    .right p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      color: #444;
+      max-width: 600px;
+    }
+
+    .right button {
+      background-color: darkorange;
+      color: white;
+      padding: 14px 30px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 0 4px 14px rgba(255, 102, 0, 0.4);
+      transition: all 0.3s ease;
+      width: fit-content;
+    }
+
+    .right button:hover {
+      background-color: darkorange;
+      box-shadow: 0 6px 16px rgba(229, 90, 0, 0.5);
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        height: auto;
+      }
+
+      .left, .right {
+        width: 100%;
+        padding: 40px 20px;
+        text-align: center;
+      }
+
+      .right h1 {
+        font-size: 2rem;
+      }
+
+      .right p {
+        font-size: 1rem;
+        margin: 0 auto;
+      }
+
+      .right button {
+        margin: 20px auto 0;
+      }
+
+      .logo {
+        font-size: 2.8rem;
+      }
+    }
+  </style>
 </head>
 <body>
 
-  <nav class="navbar">
-    <div class="logo" onclick="location.href='/'">QuickShare</div>
-    <div class="tagline">Share files instantly, no login required</div>
-  </nav>
-
   <div class="container">
-    <h1 class="heading">Welcome to QuickShare</h1>
-    <p class="subtext">Upload and share your files securely with a one-time password</p>
-
-    <div class="buttons">
-      <button class="btn" onclick='openModal()'>Upload File</button>
-      <button class="btn" onclick='openfetchmodal()'>Fetch File</button>
+    <div class="left">
+      <div class="logo" onclick="location.href='/'">QuickShare</div>
+    </div>
+    <div class="right">
+      <h1>Fast. Secure. Login-Free.</h1>
+      <p>
+        Share your files without worries. <strong>QuickShare</strong> never stores your data, ensures end-to-end encryption, and doesn’t require you to log in.
+        Simple, private, and secure file sharing at its best.
+      </p>
+      <button onclick="window.location.href='main.html'">Get Started</button>
     </div>
   </div>
 
-  <div id="uploadModal" class="modal">
-    <div class="modal-content">
-  
-      <span class="close-btn" onclick="closeModal()">&times;</span>
-  
-      <h2>Upload a File</h2>
-      <input type="file" name="file" id="fileInput" hidden required />
-      <label for="fileInput" class="browse-btn">📁 Browse File</label>
-  
-      <!-- File name display -->
-      <p id="selectedFileName" class="file-name">No file selected</p>
-  
-      <!-- Upload Button -->
-      <button type="button" id="uploadbutton" class="btn">Upload</button>
-  
-      <!-- Password (if any) -->
-      <div id="password" class="modal"></div>
-    </div>
-  </div>
-  
-  
-
-
-<div id="fetchmodal" class="modal1">
-  <div class="fetch">
-
-    <span class="close-btn" onclick="fetchcloseModal()">&times;</span>
-    
-    <h2>Enter The Password</h2>
-    <input type="search" id="fetchpassword">
-    <button type="submit" class="btn" onclick="getfiles()">Submit</button>
-  </div>
-</div>
-
-  <footer>
-    &copy; 2025 QuickShare | Built with ❤️ by Animesh
-  </footer>
-<script src="index.js"></script>
 </body>
 </html>
