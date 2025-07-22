@@ -105,6 +105,7 @@ function uploadfiles(event) {
             text: `Your Password is ${data.password}`,
             icon: 'success',
             confirmButtonText: 'copy password',
+            confirmButtonColor: 'orange'
           }).then(result=>{
             if(result.isConfirmed){
             navigator.clipboard.writeText(data.password);
@@ -132,6 +133,14 @@ function uploadfiles(event) {
   });
 function getfiles(){
   const key=document.getElementById('fetchpassword').value;
+  Swal.fire({
+    title: 'Fetching Your files',
+    text: 'Please wait while your file is being fetched.',
+    allowOutsideClick: false,
+    didOpen: () => {
+      Swal.showLoading();
+    }
+  });
   fetch('https://quickshare-3m6q.onrender.com/fetch', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
